@@ -1,0 +1,42 @@
+--- /usr/share/X11/xkb/symbols/pc	2018-01-02 01:07:49.071225642 +0100
++++ pc	2018-01-02 01:12:38.000000000 +0100
+@@ -12,6 +12,7 @@ xkb_symbols "pc105" {
+ 
+     include "srvr_ctrl(fkey2vt)"
+     include "pc(editing)"
++    include "pc(chromebook)"
+     include "keypad(x11)"
+ 
+     key <BKSP> {	[ BackSpace, BackSpace	]	};
+@@ -85,3 +86,31 @@ xkb_symbols "editing" {
+     key <DOWN> {	[  Down			]	};
+     key <RGHT> {	[  Right		]	};
+ };
++
++hidden partial alphanumeric_keys
++xkb_symbols "chromebook" {
++    // Based on GalliumOS keybindings
++    // https://wiki.galliumos.org/Media_keys_and_default_keybindings#Key_Mappings
++
++    // Media keys
++    key <FK01> { [ XF86Back, NoSymbol, F1 ] };
++    key <FK02> { [ XF86Forward, NoSymbol, F2 ] };
++    key <FK03> { [ XF86Refresh, NoSymbol, F3 ] };
++    key <FK04> { [ F11, NoSymbol, F4 ] };
++    key <FK05> { [ Print, NoSymbol, F5 ] };
++    key <FK06> { [ XF86MonBrightnessDown, NoSymbol, F6 ] };
++    key <FK07> { [ XF86MonBrightnessUp, NoSymbol, F7 ] };
++    key <FK08> { [ XF86AudioMute, NoSymbol, F8 ] };
++    key <FK09> { [ XF86AudioLowerVolume, NoSymbol, F9] };
++    key <FK10> { [ XF86AudioRaiseVolume, NoSymbol, F10] };
++
++    // Arrow keys
++    key   <UP> { [ Up, NoSymbol, Page_Up ] };
++    key <LEFT> { [ Left, NoSymbol, Home ] };
++    key <DOWN> { [ Down, NoSymbol, Page_Down ] };
++    key <RGHT> { [ Right, NoSymbol, End ] };
++
++    // Other keys
++    key <AB09> { [ Period, NoSymbol, Insert ] };
++    key <BKSP> { [ BackSpace, NoSymbol, Delete ] };
++};
